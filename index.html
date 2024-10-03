@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Sashena</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+        }
+        .content {
+            display: flex; /* Usar flexbox */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
+            height: 100%; /* Ocupa toda la altura */
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        h1, p {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombreado del texto */
+        }
+        #play-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0; /* Espacio entre botones */
+        }
+    </style>
+</head>
+<body>
+    <iframe class="video-background" id="video-frame" width="100%" height="100%" src="https://www.youtube.com/embed/n6EVX9FVoeM?enablejsapi=1&loop=1&playlist=n6EVX9FVoeM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <div class="content">
+        <div>
+            <h1>Para Sashena</h1> 
+            <p>Hola la verdad no se que se celebre el dia de hoy pero imaginemos que es entre un 14 y un 15 de diciembre
+            dias en los que te conoci y muchas cosas empezaron a cambiar en mi, pasaron algunas cosas buenas y un tantito malas a la vez
+            en el transcurso del tiempo que te conozco, y ante muchas cosas que hayan sucedido siempre estuviste ahi, 
+            se que haz desaparecido pero siempre volvias mientras yo trataba de olvidarme de ti pero sin embargo no puedo, no puedo olvidarme
+            todo los momentos felices que vivi escuchandote, interactuando contigo, las pocas veces que por ti me quedaba hasta ciertas horas de la noche.
+            Aun sigues siendo un misterio, me refiero a tu forma de pensar y actuar, aunque a veces eres algo predecible, si en algun momento te hice algun 
+            tipo de daño, te pido disculpas, y ante todo esto quiero decirte que te quiero. De Franz para Sashena
+            </p>
+            <button id="play-button">Reproducir video</button>
+        </div>
+    </div>
+
+    <script>
+        const playButton = document.getElementById('play-button');
+        const iframe = document.getElementById('video-frame');
+
+        playButton.addEventListener('click', () => {
+            const playerUrl = iframe.src;
+            iframe.src = playerUrl + "&autoplay=1"; // Activar reproducción al hacer clic
+        });
+    </script>
+</body>
+</html>
